@@ -1,4 +1,4 @@
-# Users (People)
+# Accounts (Users/People)
 
 ## Get All Users
 
