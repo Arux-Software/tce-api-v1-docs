@@ -3,14 +3,13 @@ title: API Reference
 
 language_tabs:
   - shell
-  - ruby
-  - python
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - oauth
+  - users
+  - relationships
   - errors
 
 search: true
@@ -18,151 +17,45 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Welcome to the FeePay Switchboard API Docs.
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
 # With shell, you can just pass the correct header with each request
+# OAuth2 based access
 curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: theoauth2accesstoken"
+  
+# Client-ID based access
+curl "api_endpoint_here"
+  -H "Client-ID: yourclientid" -H "Client-Secret: yourclientsecret"
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `theoauth2accesstoken` with the user's Oauth2 Access Token or `yourclientid` and `yourclientsecret` with your app's client id and secret.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+There are two ways to authenticate and get data from the API. 
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+1. Using an oauth2 access token granted to your app when a user logs in via oauth2. Provide the access token via the `Authorization` HTTP header.
 
-`Authorization: meowmeowmeow`
+2. Providing your app's client id and secret via the `Client-ID` and `Client-Secret` HTTP headers. -This only works if your app is granted wider access to the api.-
 
-<aside class="notice">
-You must replace `meowmeowmeow` with your personal API key.
-</aside>
+# Formats
 
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+> To specify the data format:
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl "api_endpoint_here"
+  -H "Authorization: theoauth2accesstoken"
+  -H "Accepts: applicaiton/json"
+  
+curl "api_endpoint_here"
+  -H "Authorization: theoauth2accesstoken"
+  -H "Accepts: applicaiton/xml"  
 ```
 
-> The above command returns JSON structured like this:
+The api will return `json` or `xml` based on the `Accepts` header. By default the api will return `json`.
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/3"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the cat to retrieve
-
+The Ruby Gem will return an indifferent hash.
