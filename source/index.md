@@ -9,7 +9,7 @@ toc_footers:
 includes:
   - oauth
   - users
-  - relationships
+  - cart
   - errors
 
 search: true
