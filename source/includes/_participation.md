@@ -3,7 +3,7 @@
 ## Get All Participation records
 
 ```shell
-curl "https://demo.ce.feepay.com/api/v1/participation/99ea1020-b0d7-0132-3dcd-60030895e8c0"
+curl "https://demo.ce.eleyo.com/api/v1/participation/99ea1020-b0d7-0132-3dcd-60030895e8c0"
   -H "Client-ID: yourclientid" -H "Client-Secret: yourclientsecret"
 ```
 
@@ -26,8 +26,8 @@ This endpoint retrieves all participation data for a specific user.
 
 ### HTTP Request
 
-`GET https://<DISTRICT>.ce.feepay.com/api/v1/participation/<USER_ID>`
-  
+`GET https://<DISTRICT>.ce.eleyo.com/api/v1/participation/<USER_ID>`
+
 ### URL Parameters
 
 Parameter | Description

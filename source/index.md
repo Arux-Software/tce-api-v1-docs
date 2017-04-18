@@ -18,7 +18,7 @@ search: true
 
 # Introduction
 
-Welcome to the FeePay CE API Docs.
+Welcome to the Eleyo API Docs.
 
 # Authentication
 
@@ -26,7 +26,7 @@ Welcome to the FeePay CE API Docs.
 
 ```shell
 # With shell, you can just pass the correct header with each request
-  
+
 # Client-ID based access
 curl "api_endpoint_here"
   -H "Client-ID: yourclientid" -H "Client-Secret: yourclientsecret"
@@ -34,7 +34,7 @@ curl "api_endpoint_here"
 
 > Make sure to replace `yourclientid` and `yourclientsecret` with your app's client id and secret.
 
-To access the FeePay CE API you must provide your client id and secret via the `Client-ID` and `Client-Secret` HTTP headers.
+To access the Eleyo API you must provide your client id and secret via the `Client-ID` and `Client-Secret` HTTP headers.
 
 # Formats
 
@@ -44,7 +44,7 @@ To access the FeePay CE API you must provide your client id and secret via the `
 curl "api_endpoint_here"
   -H "Client-ID: yourclientid" -H "Client-Secret: yourclientsecret"
   -H "Accepts: applicaiton/json"
-  
+
 curl "api_endpoint_here"
   -H "Client-ID: yourclientid" -H "Client-Secret: yourclientsecret"
   -H "Accepts: applicaiton/xml"  

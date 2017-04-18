@@ -2,7 +2,7 @@
 
 
 ```shell
-curl "https://demo.ce.feepay.com/api/v1/participation/99ea1020-b0d7-0132-3dcd-60030895e8c0/child_care_contracts"
+curl "https://demo.ce.eleyo.com/api/v1/participation/99ea1020-b0d7-0132-3dcd-60030895e8c0/child_care_contracts"
   -H "Client-ID: yourclientid" -H "Client-Secret: yourclientsecret"
 ```
 
@@ -10,7 +10,7 @@ This endpoint retrieves a specific user's child care contracts.
 
 ### HTTP Request
 
-`GET https://<DISTRICT>.ce.feepay.com/api/v1/participation/<USER_ID>/child_care_contracts`
+`GET https://<DISTRICT>.ce.eleyo.com/api/v1/participation/<USER_ID>/child_care_contracts`
 
 ### URL Parameters
 
@@ -23,7 +23,7 @@ USER_ID | The UUID of the user to retrieve data for
 
 
 ```shell
-curl "https://demo.ce.feepay.com/api/v1/participation/99ea1020-b0d7-0132-3dcd-60030895e8c0/child_care_contracts/1"
+curl "https://demo.ce.eleyo.com/api/v1/participation/99ea1020-b0d7-0132-3dcd-60030895e8c0/child_care_contracts/1"
   -H "Client-ID: yourclientid" -H "Client-Secret: yourclientsecret"
 ```
 
@@ -31,7 +31,7 @@ This endpoint retrieves a user's specific child care contract.
 
 ### HTTP Request
 
-`GET https://<DISTRICT>.ce.feepay.com/api/v1/participation/<USER_ID>/child_care_contracts/<ID>`
+`GET https://<DISTRICT>.ce.eleyo.com/api/v1/participation/<USER_ID>/child_care_contracts/<ID>`
 
 ### URL Parameters
 
@@ -45,7 +45,7 @@ ID | The ID of the child care contract to retrieve
 
 
 ```shell
-curl "https://demo.ce.feepay.com/api/v1/participation/99ea1020-b0d7-0132-3dcd-60030895e8c0/child_care_contracts/1/responses"
+curl "https://demo.ce.eleyo.com/api/v1/participation/99ea1020-b0d7-0132-3dcd-60030895e8c0/child_care_contracts/1/responses"
   -H "Client-ID: yourclientid" -H "Client-Secret: yourclientsecret"
 ```
 
@@ -53,7 +53,7 @@ This endpoint retrieves a user's specific child care contract's Question and Ans
 
 ### HTTP Request
 
-`GET https://<DISTRICT>.ce.feepay.com/api/v1/participation/<USER_ID>/child_care_contracts/<ID>/responses`
+`GET https://<DISTRICT>.ce.eleyo.com/api/v1/participation/<USER_ID>/child_care_contracts/<ID>/responses`
 
 ### URL Parameters
 
